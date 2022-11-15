@@ -1,0 +1,21 @@
+
+body {
+	background: linear-gradient(to bottom right, white, #F7F9F9);
+	height: 100%;
+	margin: 0 auto;
+}
+
+a {
+      text-decoration:none;
+   }
+.container {
+	width: 200px;
+	height: 200px;
+	margin-top: 22px;
+	margin-right: 20px;
+	text-align: center;
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.09);
+	font-family: HelveticaNeue-Light;
+}

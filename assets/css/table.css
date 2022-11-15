@@ -1,0 +1,35 @@
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+}
+
+#table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  height:90%;
+  overflow:auto;  
+  margin-top: 20px;
+}
+
+p {
+	margin-left: 120px;
+	}
+
+th {
+    background-color: #512E5F;
+    color: white;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+

@@ -1,0 +1,34 @@
+body{
+	margin: 0 auto;
+	background-color: #512E5F;
+}
+
+.container {
+	width: 400px;
+	height: 400px;
+	text-align: center;
+	background-color: #ffffff;
+	border-radius: 12px;
+	margin: 0 auto;
+	margin-top: 190px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	font-family: HelveticaNeue-Light;
+}
+
+.button {
+    background-color: #4A235A; /* Green */
+    border: none;
+    color: white;
+    height: 57px;
+	width: 250px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 8px 2px;
+    cursor: pointer;
+}
+
+.button4 {border-radius: 4px;}
+
+}

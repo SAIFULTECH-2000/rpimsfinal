@@ -1,0 +1,27 @@
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 0;
+}
+
+th, td {
+    padding: 15px;
+}
+
+
+p {
+	margin-left: 120px;
+	}
+
+th {
+    background-color: #512E5F;
+    color: white;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
