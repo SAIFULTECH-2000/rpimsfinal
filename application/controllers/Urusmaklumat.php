@@ -207,7 +207,7 @@ class Urusmaklumat extends CI_Controller
         $mail->addAddress('marshima@tmsk.uitm.edu.my');
         $USERS = $this->db->query("select * from users where role_id='1'")->result_array();
         foreach ($USERS as $row) {
-           // $mail->addAddress($row['email']);
+           //$mail->addAddress($row['email']);
         }
 
         //Set the subject line
