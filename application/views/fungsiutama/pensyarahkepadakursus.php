@@ -1,13 +1,14 @@
  <div id="back-kiri">
-		<a href="<?=base_url('fungsiutama')?>"><button class="button" style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
-</div>
+     <a href="<?=base_url('fungsiutama')?>"><button class="button"
+             style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
+ </div>
 
-<!-- CONTENT SECTION -->
-<section class="small-section">
+ <!-- CONTENT SECTION -->
+ <section class="small-section">
 
 
 
-	<?php
+     <?php
 	$array = array(
 	    "kembali"=>true
 	    );
@@ -61,7 +62,7 @@
                         $i++;
 						$KodKursus = $rows['KodKursus'];
 						$NoPekerja = $rows['NoPekerja'];
-						$NamaStaf = $rows['NamaStaf'];
+						$NamaStaf =  strtoupper($rows['NamaStaf']);
 						$KodSem = $rows['KodSem'];
 						$NamaSem = $rows['NamaSem'];
 						$NamaKursus = $rows['NamaKursus'];
@@ -70,23 +71,35 @@
 						$NoPekerja = $rows['NoPekerja'];
 						?>
 
-						
-									<tr>
-								   		<td><center><?=$i?></td>
-                                        <td><?=$NoPekerja?></td>
-								   		<td><?=$NamaStaf?></td>
-								   		<td><center><?=$KodKampus?></td>
-								   		<td><center><?=$KodSem?></td>
-								   		<td><center> 
-										   <form method='post' action="<?=base_url('carian/profile_staf')?>">
-                                    <input type='hidden' name='NoPekerja' value='<?=$NoPekerja?>'>
-                                    <Button type='submit' name='profile' class='btn btn-warning' style='color:green;'  ><i class='fa fa-user-circle' aria-hidden='true'></i>Profile</Button>
-                                    </form>  
-										   
-										  <center><a href="<?=base_url('urusmaklumat/daftar_perlantikan_rp')?>/<?= $NoPekerja?>/<?=set_value('search')?>" style="color:green;" data-toggle="tooltip" data-placement="bottom" title="Lantik RP"><i class="fa fa-refresh" aria-hidden="true"></i></a></center></td>
-								   	</tr>
-								   	
-				<?php	} 
+
+     <tr>
+         <td>
+             <center><?=$i?>
+         </td>
+         <td><?=$NoPekerja?></td>
+         <td><?=$NamaStaf?></td>
+         <td>
+             <center><?=$KodKampus?>
+         </td>
+         <td>
+             <center><?=$KodSem?>
+         </td>
+         <td>
+             <center>
+                 <form method='post' action="<?=base_url('carian/profile_staf')?>">
+                     <input type='hidden' name='NoPekerja' value='<?=$NoPekerja?>'>
+                     <Button type='submit' name='profile' class='btn btn-warning' style='color:green;'><i
+                             class='fa fa-user-circle' aria-hidden='true'></i>Profile</Button>
+                 </form>
+
+                 <center><a
+                         href="<?=base_url('urusmaklumat/daftar_perlantikan_rp')?>/<?= $NoPekerja?>/<?=set_value('search')?>"
+                         style="color:green;" data-toggle="tooltip" data-placement="bottom" title="Lantik RP"><i
+                             class="fa fa-refresh" aria-hidden="true"></i></a></center>
+         </td>
+     </tr>
+
+     <?php	} 
 
 
 				
@@ -100,16 +113,16 @@
 
 
 	?>
-	
 
-	
-	<center><?php echo $head; ?></center>
-	<center><?php echo $output; ?></center>
 
-<?php 
+
+     <center><?php echo $head; ?></center>
+     <center><?php echo $output; ?></center>
+
+     <?php 
 
 	echo "</td></tr></table>";
 
 ?>
 
-</section>
+ </section>

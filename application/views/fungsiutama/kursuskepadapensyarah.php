@@ -1,8 +1,9 @@
  <div id="back-kiri">
-		<a href="<?=base_url('fungsiutama')?>"><button class="button" style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
-</div>
-<section class="small-section">
-	<?php
+     <a href="<?=base_url('fungsiutama')?>"><button class="button"
+             style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
+ </div>
+ <section class="small-section">
+     <?php
 
 	$out = NULL;
 	$output = NULL;
@@ -52,7 +53,7 @@
                         $i++;
 						$KodKursus = $rows['KodKursus'];
 						$NoPekerja = $rows['NoPekerja'];
-						$NamaStaf = $rows['NamaStaf'];
+						$NamaStaf =  strtoupper($rows['NamaStaf']);
 						$KodSem = $rows['KodSem'];
 						$NamaSem = $rows['NamaSem'];
 						$NamaKursus = $rows['NamaKursus'];
@@ -94,16 +95,16 @@
 
 
 	?>
-	
 
-	
-	<center><?php echo $out; ?></center>
-	<center><?php echo $output; ?></center>
 
-<?php 
+
+     <center><?php echo $out; ?></center>
+     <center><?php echo $output; ?></center>
+
+     <?php 
 
 	echo "</td></tr></table>";
 
 ?>
 
-</section>
+ </section>

@@ -104,6 +104,7 @@
                                     break;
                                 case 1:
                                     $tahap = "Sarjana Muda";
+                                    break;
                                 case 2:
                                     $tahap = "Sarjana";
                                     break;

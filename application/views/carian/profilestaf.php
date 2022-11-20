@@ -42,7 +42,7 @@
         <tr>
             <td><b>Nama Staf </b></td>
             <td>:</td>
-            <td> <?= $query2['NamaStaf']; ?></td>
+            <td> <?=  strtoupper($query2['NamaStaf']); ?></td>
         </tr>
 
         <tr>
@@ -203,7 +203,7 @@
 
         </tr>
     </table>
-    <div id='table-wrapper'>
+    <!-- <div id='table-wrapper'>
         <div id='table-scroll'>
             <table align='center' style="width:100%;" class="table table-bordered">
                 <tr>
@@ -249,7 +249,54 @@
         }
         ?>
             </table>
-        </div>
+        </div> -->
+    <div id='table-scroll'>
+        <h4>Pengajaran</h4>
+        <table align='center' style="width:100%;" class="table table-bordered">
+            <tr>
+                <th class='col-xs-1'>
+                    <center>Bil.</center>
+                </th>
+                <th class='col-xs-1'>
+                    <center>Nama Kursus</center>
+                </th>
+                <th colspan='2'>Semester</th>
+
+            </tr>
+            <?php
+            $no = 0;
+            $rp = false;
+            $rp_next = false;
+
+            foreach ($pengajaran as $row) {
+                $NamaKursus = $row['kursus'];
+                $KodSem = $row['KodSem'];
+                $no = $no + 1;
+            ?>
+            <tr>
+                <td> <?= $no++; ?></td>
+                <td> <?= $NamaKursus; ?></td>
+                <td> <?= $KodSem; ?> </td>
+
+            </tr>
+
+            <?php
+
+            }
+            ?>
+            <?php
+            if ($no == 0) {
+            ?>
+            <tr>
+                <td colspan='5' style='color:red; font-weight:bold; font-style:italic;'>
+                    <center>Tiada maklumat pengajaran</center>
+                </td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+    </div>
     </div>
 
 

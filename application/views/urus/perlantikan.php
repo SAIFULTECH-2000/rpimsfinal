@@ -158,4 +158,9 @@ Swal.fire("<?php echo $this->session->flashdata('success'); ?>").then(function()
     window.location = "<?= base_url('fungsiutama') ?>";
 });
 <?php } ?>
+<?php if ($this->session->flashdata('fails')) { ?>
+Swal.fire("<?php echo $this->session->flashdata('fails'); ?>").then(function() {
+    window.location = "<?= base_url('urusmaklumat/daftar_perlantikan_rp/') ?>";
+});
+<?php } ?>
 </script>

@@ -1,5 +1,5 @@
-<?php  if(  $role = $this->session->userdata('role_id')!=4){ ?>
-    <div id="back-menu">
+<?php  if(  $role = $this->session->userdata('role_id')!=3){ ?>
+<div id="back-menu">
     <a href="<?= base_url('auth') ?>"><button class="button"
             style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
 </div>

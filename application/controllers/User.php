@@ -4,7 +4,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class User extends CI_Controller
 {
     function __construct()
-	{parent::__construct();
+	{
+        parent::__construct();
 		if(empty($this->session->userdata('username'))){
 			redirect(base_url('auth'));
 		}
@@ -21,6 +22,8 @@ class User extends CI_Controller
     public function profile()
     {
         $NoPekerja = $this->session->userdata('username');
+
+
         $data['result'] = $this->db->query("(SELECT perlantikan.id,perlantikan.NoPekerja, perlantikan.KodKursus, kursus.NamaKursus, staf.NamaStaf, 
                                             perlantikan.TarikhMula, perlantikan.TarikhTamat, perlantikan.SuratPerlantikan, perlantikan.status
 											FROM perlantikan
@@ -35,6 +38,9 @@ class User extends CI_Controller
 												INNER JOIN staf ON perlantikantamat.NoPekerja=staf.NoPekerja
                                             WHERE perlantikantamat.NoPekerja = ' $NoPekerja' and  perlantikantamat.disahkan = 'Sah'
                                             ORDER BY perlantikantamat.TarikhTamat DESC)")->result_array();
+        $data['pengajaran'] = $this->db->query("SELECT * from pengajaran inner join kursus on pengajaran.KodKursus = kursus.KodKursus inner join semester on pengajaran.KodSem = semester.KodSem  where pengajaran.NoPekerja = '$NoPekerja'")->result_array();
+
+
         if (empty($NoPekerja)) {
             redirect('Carian/staf');
         } else {
@@ -99,11 +105,8 @@ class User extends CI_Controller
 								FROM perlantikan
 								INNER JOIN kursus ON perlantikan.KodKursus=kursus.KodKursus 
 									INNER JOIN staf ON perlantikan.NoPekerja=staf.NoPekerja
-                                WHERE perlantikan.status='active'
-                                and (perlantikan.NoPekerja LIKE '$search' or perlantikan.KodKursus LIKE '$search')
+                                WHERE perlantikan.status='active' and perlantikan.NoPekerja = '$search'
                                 ORDER BY KodKursus ASC")->result_array();
-        $data['search'] = $search;
-        $data['search'] = $search;
         $this->load->view('components/header');
         $this->load->view('dashboard/perlantikan', $data);
         $this->load->view('components/footer');

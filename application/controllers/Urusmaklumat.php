@@ -1,4 +1,4 @@
-<?php
+p<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require 'vendor/autoload.php';
 
@@ -17,7 +17,8 @@ date_default_timezone_set('Etc/UTC');
 class Urusmaklumat extends CI_Controller
 {
     function __construct()
-	{parent::__construct();
+	{
+        parent::__construct();
 		if(empty($this->session->userdata('username'))){
 			redirect(base_url('auth'));
 		}
@@ -58,12 +59,19 @@ class Urusmaklumat extends CI_Controller
                 "email" => $this->input->post("Emel"),
                 "pwd" => "abc123",
             );
-            $this->db->insert('staf', $data);
-            $this->db->insert('users', $data1);
+            $this->db->db_debug = false;
+            if((!@$this->db->insert('staf', $data))&&(!@ $this->db->insert('users', $data1))){
+            $data2['msg'] = "<p style='color:red;'>Opss, duplicate no pekerja</p>";
+            $this->load->view('components/header');
+            $this->load->view('urus/staf', $data2);
+            $this->load->view('components/footer');
+            }else{
+                //berjaga
             $data2['msg'] = 'Terima kasih, staf baru berjaya ditambah';
             $this->load->view('components/header');
             $this->load->view('urus/staf', $data2);
             $this->load->view('components/footer');
+            }
         }
     }
     public function daftar_kampus()
@@ -79,11 +87,18 @@ class Urusmaklumat extends CI_Controller
                 "KodKampus" => $this->input->post('KodKampus'),
                 "NamaKampus" => $this->input->post('NamaKampus'),
             );
-            $this->db->insert('kampus', $data1);
+            $this->db->db_debug = false;
+            if(!@$this->db->insert('kampus', $data1)){
+            $data['msg'] = "<p style='color:red'>Opss duplicate kod kampus .<br><br></p>";
+            $this->load->view('components/header');
+            $this->load->view('urus/kampus', $data);
+            $this->load->view('components/footer'); 
+            }else{
             $data['msg'] = "Terima kasih, <b>kampus</b> baru berjaya ditambah.<br><br>";
             $this->load->view('components/header');
             $this->load->view('urus/kampus', $data);
-            $this->load->view('components/footer');
+            $this->load->view('components/footer');   
+            }
         }
     }
     public function daftar_jabatan()
@@ -99,11 +114,18 @@ class Urusmaklumat extends CI_Controller
                 'KodJab' => $this->input->post('KodJab'),
                 'NamaJabBhg' => $this->input->post('NamaJabBhg'),
             );
-            $this->db->insert('jabatan', $data1);
+            $this->db->db_debug = false;
+            if(!@$this->db->insert('jabatan', $data1)){
+             $data['msg'] = "<p style='color:red'>Ops <b>jabatan gagal ditambah kerana duplicate KodJab</b> <br><br></p>";
+            $this->load->view('components/header');
+            $this->load->view('urus/jabatan', $data);
+            $this->load->view('components/footer');   
+            }else{
             $data['msg'] = "Terima kasih, <b>jabatan</b> baru berjaya ditambah.<br><br>";
             $this->load->view('components/header');
             $this->load->view('urus/jabatan', $data);
             $this->load->view('components/footer');
+            }
         }
     }
     public function daftar_kursus()
@@ -122,11 +144,24 @@ class Urusmaklumat extends CI_Controller
                 "KodJab" => $this->input->post("KodJab"),
                 "type"=>$this->input->post("type")
             );
-            $this->db->insert('kursus', $data1);
-            $data['msg'] = "<font color='green'>Terima kasih, <b>kursus</b> baru berjaya ditambah.</font><br><br>";
+           // $this->db->insert('kursus', $data1);
+            $this->db->db_debug = false;
+
+            if(!@$this->db->insert('kursus', $data1)){
+            $error = $this->db->error();
+            // do something in error case
+                $data['msg'] = "<font color='red'>Opps, <b>kursus</b> Terdapat masalah di kod khusus sila padam atau kemaskini khusus sedia ada</font><br><br> ";
             $this->load->view('components/header');
             $this->load->view('urus/kursus', $data);
             $this->load->view('components/footer');
+            }else{
+             // do something in success case
+                 $data['msg'] = "<font color='green'>Terima kasih, <b>kursus</b> baru berjaya ditambah.</font><br><br>";
+            $this->load->view('components/header');
+            $this->load->view('urus/kursus', $data);
+            $this->load->view('components/footer');
+            }
+        
         }
     }
     private function _sendmail($rpname,$jabatan)
@@ -274,10 +309,15 @@ Thank you<br>
             $KodJab = $staff['KodJab'];
             $jabatan = $this->db->get_where('jabatan', ['KodJab' => $KodJab])->row_array();
             $this->_sendmail($rpname,$jabatan['NamaJabBhg']);
-            $this->db->insert('perlantikan', $data);
+            $this->db->db_debug = false;
 
-            $this->session->set_flashdata('success', 'Perlantikan Berjaya ditambah');
+            if(!@ $this->db->insert('perlantikan', $data)){
+            $this->session->set_flashdata('fails', "<p style='color:red'>Opss perlantikan tidak dapat merekod perlantikan, sila isi semua </p>");
             redirect('urusmaklumat/daftar_perlantikan_rp');
+            }else{
+             $this->session->set_flashdata('success', 'Perlantikan Berjaya ditambah');
+            redirect('urusmaklumat/daftar_perlantikan_rp');   
+            }
         }
     }
     public function daftar_pengajaran()
@@ -290,16 +330,25 @@ Thank you<br>
             $this->load->view('urus/pengajaran');
             $this->load->view('components/footer');
         } else {
-            $data['msg'] = "Terima kasih, data pengajaran baru berjaya ditambah.<br>";
+           
             $data1 = array(
                 "NoPekerja" => $this->input->post("NoPekerja"),
                 "KodKursus" => $this->input->post("KodKursus"),
                 "KodSem" => $this->input->post("KodSem")
             );
-            $this->db->insert('pengajaran', $data1);
+             $this->db->db_debug = false;
+
+          if(!@  $this->db->insert('pengajaran', $data1)){
+            $data['msg'] = "<p style='color:red'>Tidak dapat daftar pengajaran sila isi semula</p>";
             $this->load->view('components/header');
             $this->load->view('urus/pengajaran', $data);
             $this->load->view('components/footer');
+          }else{
+            $data['msg'] = "Terima kasih, data pengajaran baru berjaya ditambah.<br>";
+            $this->load->view('components/header');
+            $this->load->view('urus/pengajaran', $data);
+            $this->load->view('components/footer');
+          }
         }
     }
     public function daftar_semester()
@@ -315,11 +364,18 @@ Thank you<br>
                 "KodSem" => $this->input->post('KodSem'),
                 "NamaSem" => $this->input->post('NamaSem'),
             );
-            $this->db->insert('semester', $data1);
+            $this->db->db_debug = false;
+            if(!@ $this->db->insert('semester', $data1)){
+            $data['msg'] = "<p style='color:red'>Ops subjek tidak dapat didaftarkan</p>";
+            $this->load->view('components/header');
+            $this->load->view('urus/semester', $data);
+            $this->load->view('components/footer');   
+            }else{
             $data['msg'] = "Terima kasih, subjek baru berjaya ditambah.<br>";
             $this->load->view('components/header');
             $this->load->view('urus/semester', $data);
-            $this->load->view('components/footer');
+            $this->load->view('components/footer');   
+            }
         }
     }
 
@@ -332,16 +388,22 @@ Thank you<br>
             $this->load->view('urus/cawangan');
             $this->load->view('components/footer');
         } else {
-            $data['msg'] = "<font color='green'>Terima kasih, data <b>cawangan</b> baru berjaya ditambah.<br></font>";
             $data1 = array(
                 'KodJab' => $this->input->post('KodJab'),
                 'KodKampus' => $this->input->post('KodKampus'),
             );
-
-            $this->db->insert('cawangan', $data1);
+            $this->db->db_debug = false;
+            if(!@$this->db->insert('cawangan', $data1)){
+            $data['msg'] = "<font color='red'>Ops cawangan tidak dapat ditambah<br></font>";
             $this->load->view('components/header');
             $this->load->view('urus/cawangan', $data);
-            $this->load->view('components/footer');
+            $this->load->view('components/footer');   
+            }else{
+            $data['msg'] = "<font color='green'>Terima kasih, data <b>cawangan</b> baru berjaya ditambah.<br></font>";
+            $this->load->view('components/header');
+            $this->load->view('urus/cawangan', $data);
+            $this->load->view('components/footer');   
+            }
         }
     }
     public function daftar_program()
@@ -354,16 +416,23 @@ Thank you<br>
             $this->load->view('urus/program');
             $this->load->view('components/footer');
         } else {
-            $data['msg'] = "Terima kasih, program baru berjaya ditambah.<br>";
             $data1 = array(
                 "KodProgram" => $this->input->post("KodProgram"),
                 "NamaProgram" => $this->input->post("NamaProgram"),
                 "KodJab" => $this->input->post("KodJab")
             );
-            $this->db->insert('program', $data1);
+            $this->db->db_debug = false;
+            if(!@ $this->db->insert('program', $data1)){
+            $data['msg'] = "<p style='red'>program tidak dapat ditambah , sila isi semula</p>";
             $this->load->view('components/header');
             $this->load->view('urus/program', $data);
             $this->load->view('components/footer');
+            }else{
+            $data['msg'] = "Terima kasih, program baru berjaya ditambah.<br>";
+            $this->load->view('components/header');
+            $this->load->view('urus/program', $data);
+            $this->load->view('components/footer');
+            }
         }
     }
     public function daftar_subjek()
@@ -376,16 +445,23 @@ Thank you<br>
             $this->load->view('urus/subjek');
             $this->load->view('components/footer');
         } else {
-            $data['msg'] = "Terima kasih, program baru berjaya ditambah.<br>";
             $data1 = array(
                 "KodProgram" => $this->input->post("KodProgram"),
                 "KodKursus" => $this->input->post("KodKursus"),
                 "BhgPelan" => $this->input->post("BhgPelan")
             );
-            $this->db->insert('subjek', $data1);
+            $this->db->db_debug = false;
+            if(!@$this->db->insert('subjek', $data1)){
+            $data['msg'] = "<p style='color:red'>Tidak dapat menambah program ,sila isi semula</p><br>";
             $this->load->view('components/header');
             $this->load->view('urus/subjek', $data);
-            $this->load->view('components/footer');
+            $this->load->view('components/footer');   
+            }else{
+              $data['msg'] = "Terima kasih, program baru berjaya ditambah.<br>";
+            $this->load->view('components/header');
+            $this->load->view('urus/subjek', $data);
+            $this->load->view('components/footer');   
+            }
         }
     }
 

@@ -32,7 +32,7 @@
         <tr>
             <td><b>Nama Staf </b></td>
             <td>:</td>
-            <td> <?= $query2['NamaStaf']; ?></td>
+            <td> <?=  strtoupper($query2['NamaStaf']); ?></td>
         </tr>
 
         <tr>
@@ -198,6 +198,7 @@
 
 
     <div id='table-scroll'>
+        <h4>Pengajaran</h4>
         <table align='center' style="width:100%;" class="table table-bordered">
             <tr>
                 <th class='col-xs-1'>
@@ -206,7 +207,7 @@
                 <th class='col-xs-1'>
                     <center>Nama Kursus</center>
                 </th>
-                <th colspan='2'>Tarikh</th>
+                <th colspan='2'>Semester</th>
 
             </tr>
             <?php
@@ -214,15 +215,15 @@
             $rp = false;
             $rp_next = false;
 
-            foreach ($result as $row) {
-                $NamaKursus = $row['NamaKursus'];
-                $Date = $row['TarikhMula'] . "-" . $row['TarikhTamat'];
+            foreach ($pengajaran as $row) {
+                $NamaKursus = $row['kursus'];
+                $KodSem = $row['KodSem'];
                 $no = $no + 1;
             ?>
             <tr>
                 <td> <?= $no++; ?></td>
                 <td> <?= $NamaKursus; ?></td>
-                <td> <?= $Date; ?> </td>
+                <td> <?= $KodSem; ?> </td>
 
             </tr>
 
@@ -235,7 +236,7 @@
             ?>
             <tr>
                 <td colspan='5' style='color:red; font-weight:bold; font-style:italic;'>
-                    <center>Tiada maklumat lantikan RP</center>
+                    <center>Tiada maklumat pengajaran</center>
                 </td>
             </tr>
             <?php

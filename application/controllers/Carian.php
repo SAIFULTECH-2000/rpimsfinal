@@ -14,7 +14,8 @@ require 'vendor/autoload.php';
 class Carian extends CI_Controller
 {	
 	function __construct()
-	{parent::__construct();
+	{
+		parent::__construct();
 		if(empty($this->session->userdata('username'))){
 			redirect(base_url('auth'));
 		}
@@ -578,6 +579,8 @@ Thank you";
 		if (empty($NoPekerja)) {
 			redirect('Carian/staf');
 		} else {
+			      $data['pengajaran'] = $this->db->query("SELECT * from pengajaran inner join kursus on pengajaran.KodKursus = kursus.KodKursus inner join semester on pengajaran.KodSem = semester.KodSem  where pengajaran.NoPekerja = '$NoPekerja'")->result_array();
+
 			$data['query2'] = $this->db->query("SELECT * FROM staf where NoPekerja = '$NoPekerja'")->row_array();
 
 			$data['result'] = $this->db->query("(SELECT perlantikan.id,perlantikan.NoPekerja, perlantikan.KodKursus, kursus.NamaKursus, staf.NamaStaf, 
@@ -653,7 +656,7 @@ Thank you";
 		if ($NoPekerja == null) {
 			redirect('Carian/staf');
 		} else {
-			$this->form_validation->set_rules('NoICStaf', 'NoICStaf', 'required|trim');
+			$this->form_validation->set_rules('status', 'status', 'required|trim');
 			if ($this->form_validation->run() == false) {
 				$data['query2'] = $this->db->query("SELECT * FROM staf where NoPekerja = '$NoPekerja'")->row_array();
 				$data['query3'] = $this->db->query("SELECT * FROM users WHERE NoPekerja = '$NoPekerja'")->row_array();
