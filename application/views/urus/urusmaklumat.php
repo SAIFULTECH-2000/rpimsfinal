@@ -30,7 +30,7 @@
 
 				<td><a href="<?=base_url('urusmaklumat/daftar_kampus')?>"><div class="container"><br><br> <b><font size = "5"> <i class="fa fa-university fa-2x" aria-hidden="true"></i> </font><br><br>DAFTAR KAMPUS</font></b></div></td><a>
 
-				<td><a href="<?=base_url('urusmaklumat/daftar_jabatan')?>"><div class="container"><br><br> <b><font size = "5"> <i class="fa fa-building-o fa-2x" aria-hidden="true"></i> </font><br><br>DAFTAR JABATAN</font></b></div></td><a>
+				<td><a href="<?=base_url('urusmaklumat/daftar_jabatan')?>"><div class="container"><br><br> <b><font size = "5"> <i class="fa fa-building-o fa-2x" aria-hidden="true"></i> </font><br><br>DAFTAR BIDANG</font></b></div></td><a>
 
 				<td><a href="<?=base_url('urusmaklumat/daftar_cawangan')?>"><div class="container"><br><br> <b><font size = "5"> <i class="fa fa-map-signs fa-2x" aria-hidden="true"></i> </font><br><br>DAFTAR CAWANGAN</font></b></div></td><a>
 

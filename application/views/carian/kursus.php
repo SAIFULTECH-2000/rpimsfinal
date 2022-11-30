@@ -25,7 +25,7 @@
                                                     } ?>>KURSUS</option>
                             <option value="jabatan" <?php if ($carian == "jabatan") {
                                                         echo "selected";
-                                                    } ?>>JABATAN</option>
+                                                    } ?>>BIDANG</option>
                         </select>
                     </span>
                 </div>
@@ -107,6 +107,9 @@
                                     break;
                                 case 2:
                                     $tahap = "Sarjana";
+                                    break;
+                                case 3:
+                                    $tahap = "Pra Diploma";
                                     break;
                             }
                             echo "

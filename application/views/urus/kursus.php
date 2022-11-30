@@ -22,7 +22,7 @@
         <input type="text" style="width:400px;" placeholder="" name="NamaKursus" required />
         <br><br>
 
-        <b>Jabatan :</b>
+        <b>BIDANG :</b>
         <br>
         <?php
            
@@ -44,6 +44,7 @@
             <option value="0">Diploma</option>
             <option value="1">Sarjana Muda</option>
             <option value="2">Sarjana</option>
+            <option value="3">Pra Diploma</option>
         </select>
         <br><br>
         <button type="submit" class="button-ungu button4" name="btn-signup">Daftar Kursus</button>

@@ -44,7 +44,7 @@
                         <td><?php $user['NoICStaf']; ?></td>
                     </tr>
                      <tr>
-                        <td>Jabatan</td> 
+                        <td>BIDANG</td> 
                         <td>&nbsp;</td>
                         <td>:</td>
                         <td>&nbsp;</td>

@@ -47,6 +47,11 @@
                                     <tr>
                                         <td>Diploma</td>
                                         <td>:</td>
+                                        <td><?= $pratd['total'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diploma</td>
+                                        <td>:</td>
                                         <td><?= $td['total'] ?></td>
                                     </tr>
                                     <tr>
@@ -121,14 +126,14 @@
                         <center>KAMPUS</center>
                     </th>
                     <th class='col-xs-8'>
-                        <center>Pusat Pengajian</center>
+                        <center>BIDANG</center>
                     </th>
                     <th class='col-xs-8'>
                         <center>Tempoh</center>
                     </th>
                 </tr>
                 <?php
-                echo "<br><p><b><font size = '5'>  &nbsp Laporan RP dibawah pusat pengajian</font></b></p>";
+                echo "<br><p><b><font size = '5'>  &nbsp Laporan RP dibawah BIDANG</font></b></p>";
                 $no = 1;
                 foreach ($result as $row) {
                     echo "

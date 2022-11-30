@@ -28,7 +28,7 @@
 	}
 	?>
     <b>
-        <font size='5'><i class='fa fa-building-o' aria-hidden='true'></i>&nbsp;SENARAI JABATAN</font>
+        <font size='5'><i class='fa fa-building-o' aria-hidden='true'></i>&nbsp;SENARAI BIDANG</font>
     </b>
     <br />
     <br />

@@ -119,6 +119,7 @@ class Laporan extends CI_Controller
 		$data['td'] = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  where kursus.type=0 and KodJab like '$KodJab' ")->row_array();
 		$data['tsm'] = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  where kursus.type=1 and KodJab like '$KodJab' ")->row_array();
 		$data['ts'] = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  where kursus.type=2 and KodJab like '$KodJab' ")->row_array();
+		$data['pratd'] =$this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  where kursus.type=3 and KodJab like '$KodJab' ")->row_array();
 		$this->load->view('components/header');
 		$this->load->view('laporan/rpdpp', $data);
 		$this->load->view('components/footer');

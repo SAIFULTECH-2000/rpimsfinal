@@ -75,7 +75,7 @@
 
 						foreach ($result as $row) {
 						?>
-                        <option value="<?php echo $row['NoPekerja']; ?> "
+                        <option value="<?php echo $row['NoPekerja'];?>"
                             <?php if ($id == $row['NoPekerja']) echo 'selected'; ?>>
                             <?php echo $row['NamaStaf']; ?>&nbsp;<b>(<?php echo $row['NoPekerja']; ?>)<b></option>
                         <?php

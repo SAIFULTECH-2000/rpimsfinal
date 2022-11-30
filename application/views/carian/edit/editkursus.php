@@ -23,7 +23,7 @@
             required />
         <br><br>
 
-        <b>Jabatan :</b>
+        <b>BIDANG :</b>
         <br>
         <?php
 
@@ -55,6 +55,9 @@
             <option value="2" <?php if ($row['type'] == 2) {
                                     echo "selected";
                                 } ?>>Sarjana</option>
+            <option value="3" <?php if ($row['type'] == 3) {
+                                    echo "selected";
+                                } ?>>Pra Diploma</option>
         </select>
         <br><br>
         <button type="submit" class="button-ungu button4" name="btn-signup">Kemaskini Kursus</button>

@@ -59,7 +59,7 @@
                 <td><a href="<?= base_url('laporan/rp_dibawah_pusat_pengajian') ?>">
                         <div class="container"><br><br> <b>
                                 <font size="5"> <i class="fa fa-building-o fa-2x" aria-hidden="true"></i> </font>
-                                <br><br>RP PUSAT PENGAJIAN</font>
+                                <br><br>RP BIDANG</font>
                             </b></div>
                 </td><a>
                     <?php } ?>
@@ -67,7 +67,7 @@
                     <td><a href="<?= base_url('laporan/rp_dibawah_pusat_pengajian_admin') ?>">
                             <div class="container"><br><br> <b>
                                     <font size="5"> <i class="fa fa-building-o fa-2x" aria-hidden="true"></i> </font>
-                                    <br><br>LAPORAN RP DIBAWAH<br> PUSAT PENGAJIAN(ADMIN)</font>
+                                    <br><br>LAPORAN RP DIBAWAH<br> BIDANG(ADMIN)</font>
                                 </b></div>
                     </td><a>
                         <?php } ?>
@@ -76,7 +76,7 @@
 
 				<td><a href="carikampus.php"><div class="container"><br><br> <b><font size = "5"> <i class="fa fa-university fa-2x" aria-hidden="true"></i> </font><br><br>KAMPUS</font></b></div></td><a>
 
-				<td><a href="carijabatan.php"><div class="container"><br><br> <b><font size = "5"> <i class="fa fa-building-o fa-2x" aria-hidden="true"></i> </font><br><br>JABATAN</font></b></div></td><a>
+				<td><a href="carijabatan.php"><div class="container"><br><br> <b><font size = "5"> <i class="fa fa-building-o fa-2x" aria-hidden="true"></i> </font><br><br>BIDANG</font></b></div></td><a>
 
 				<td><a href="caricawangan.php"><div class="container"><br><br> <b><font size = "5"> <i class="fa fa-map-signs  fa-2x" aria-hidden="true"></i> </font><br><br>CAWANGAN</font></b></div></td><a>
 

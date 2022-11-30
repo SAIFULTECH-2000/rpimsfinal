@@ -13,7 +13,7 @@
     <center>
         <form method='POST' class="cari">
             <div class="row col-lg-11">
-                <h1>Sila Pilih Pusat Pengajian</h1>
+                <h1>Sila Pilih BIDANG</h1>
                 <div class="col col-lg-2">
                 </div>
                 <div class="input-group col col-lg-6" style="padding:0;">
@@ -46,7 +46,7 @@
 													} ?>>KURSUS</option>
                             <option value="jabatan" <?php if ($carian == "jabatan") {
 														echo "selected";
-													} ?>>JABATAN</option>
+													} ?>>BIDANG</option>
                         </select>
                     </span>
                 </div>
@@ -97,7 +97,7 @@
                                 <center>KAMPUS</center>
                             </th>
                             <th class='col-xs-8'>
-                                <center>Pusat Pengajian</center>
+                                <center>BIDANG</center>
                             </th>
                             <th class='col-xs-8'>
                                 <center>Tempoh</center>
@@ -108,7 +108,7 @@
                     <tbody>
                         <?php
 							if ($result != "") {
-								echo "<br><p><b><font size = '5'>  &nbsp Laporan RP dibawah pusat pengajian</font></b></p>";
+								echo "<br><p><b><font size = '5'>  &nbsp Laporan RP dibawah BIDANG</font></b></p>";
 								$no = 1;
 								foreach ($result as $row) {
 									echo "

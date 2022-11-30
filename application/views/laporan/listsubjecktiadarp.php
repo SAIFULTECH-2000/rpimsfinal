@@ -1,15 +1,15 @@
 <link href="<?= base_url('assets/sbadmin/') ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-    
+
 <section>
-   
+
     <br>
     <a href="<?= base_url('laporan/rp_dibawah_pusat_pengajian') ?>"><button class="button"
             style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
 
 
     <br>
-   
+
     <b>
         <font size='5'><i class='fa fa-book' aria-hidden='true'></i>&nbsp;SENARAI KURSUS TIADA RP</font>
     </b>
@@ -66,6 +66,9 @@
                                     $tahap = "Sarjana Muda";
                                 case 2:
                                     $tahap = "Sarjana";
+                                    break;
+                                case 3:
+                                     $tahap = "Pra Diploma";
                                     break;
                             }
                             echo "

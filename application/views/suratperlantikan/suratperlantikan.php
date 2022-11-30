@@ -94,8 +94,8 @@ body {
 						if ($row['GredJawatan'] == "DM45") {
 							echo "Pensyarah(DM45)";
 						} ?><br>
-                        Pusat Pengajian Sains Komputer<br>
-                        Fakulti Sains Dan Komputer<br>
+                        BIDANG Sains Komputer<br>
+                        KOLEJ PENGKOMPUTERAN, INFORMATIK DAN MEDIA<br>
                         Universiti Teknologi MARA<br><br>
 
                         <?php $gelran ?><br>

@@ -1,4 +1,4 @@
-p<?php
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require 'vendor/autoload.php';
 
@@ -60,7 +60,8 @@ class Urusmaklumat extends CI_Controller
                 "pwd" => "abc123",
             );
             $this->db->db_debug = false;
-            if((!@$this->db->insert('staf', $data))&&(!@ $this->db->insert('users', $data1))){
+            !@ $this->db->insert('users', $data1);
+            if((!@$this->db->insert('staf', $data))){
             $data2['msg'] = "<p style='color:red;'>Opss, duplicate no pekerja</p>";
             $this->load->view('components/header');
             $this->load->view('urus/staf', $data2);
@@ -121,7 +122,7 @@ class Urusmaklumat extends CI_Controller
             $this->load->view('urus/jabatan', $data);
             $this->load->view('components/footer');   
             }else{
-            $data['msg'] = "Terima kasih, <b>jabatan</b> baru berjaya ditambah.<br><br>";
+            $data['msg'] = "Terima kasih, <b>BIDANG</b> baru berjaya ditambah.<br><br>";
             $this->load->view('components/header');
             $this->load->view('urus/jabatan', $data);
             $this->load->view('components/footer');
@@ -264,7 +265,7 @@ Please login to the RPMIS for further action.<br>
 
 LINK    : https://fskmtech.com/rpims<br>
 RP Name:$rpname<br>
-Pusat Pengajian:$jabatan<br>
+BIDANG:$jabatan<br>
 
 Thank you<br>
 ";

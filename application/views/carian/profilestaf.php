@@ -58,7 +58,7 @@
 
         <tr>
             <td>
-                <b>Jabatan </b>
+                <b>BIDANG </b>
 
             </td>
             <td>:</td>

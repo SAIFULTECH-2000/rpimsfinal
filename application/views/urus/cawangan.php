@@ -12,7 +12,7 @@
         }
     ?>
     <br/>
-    <b>Jabatan :</b>
+    <b>BIDANG :</b>
     <br/>
     <?php
 

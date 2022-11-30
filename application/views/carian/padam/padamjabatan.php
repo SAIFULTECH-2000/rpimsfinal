@@ -29,14 +29,14 @@ function confirmDelete()
 
                     <br>
 
-                    <b>Kod Jabatan :<?php echo $row['KodJab']; ?></b>
+                    <b>Kod BIDANG :<?php echo $row['KodJab']; ?></b>
                     <br>
                     <div class="tooltip">
                     <input type="text" name="KodJab" value="<?php echo $row['KodJab']; ?>" readonly="readonly" />
                     <span class=""></span>
                     </div><br><br>
 
-                    <b>Kod Jabatan :<?php echo $row['NamaJabBhg']; ?></b>
+                    <b>Kod BIDANG :<?php echo $row['NamaJabBhg']; ?></b>
                     <br>
                     <div class="tooltip">
                     <input type="text" name="NamaJabBhg" value="<?php echo $row['NamaJabBhg']; ?>" readonly="readonly" />

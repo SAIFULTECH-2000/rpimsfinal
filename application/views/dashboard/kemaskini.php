@@ -45,7 +45,7 @@
             <tr>
 
                 <td>
-                    <b>Jabatan :</b>
+                    <b>BIDANG :</b>
                     <br>
                     <?php
 

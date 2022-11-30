@@ -30,7 +30,7 @@ function confirmDelete()
 
                     <br>
 
-                    <b>Kod Jabatan :</b>
+                    <b>Kod BIDANG :</b>
                     <br>
                     <div class="tooltip">
                     <input type="text" name="KodJab" value="<?php echo $query2['KodJab']; ?>" readonly="readonly" />

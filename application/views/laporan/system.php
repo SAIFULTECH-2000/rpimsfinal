@@ -29,7 +29,7 @@ $ts = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  whe
 			<table align="center" class="data-table">
                 <tr>
                     <th>Pensyarah</th>
-                    <th>Jabatan</th>
+                    <th>BIDANG</th>
                     <th>Kampus</th>
                     <th>Kursus</th>
                     <th>Cawangan</th>
