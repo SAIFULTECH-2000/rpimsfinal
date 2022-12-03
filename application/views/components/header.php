@@ -219,8 +219,8 @@ p.round3 {
             ?>
                     <a href="<?=base_url('/carian')?>" class="w3-white"><i class="fa fa-angle-right"
                             aria-hidden="true"></i><span style="margin-left: 1em; font-size: 13px;">Pencarian</a>
-                    <a href="<?=base_url('/urusmaklumat')?>" class="w3-white"><i class="fa fa-angle-right aria-hidden="
-                            true"></i><span style="margin-left: 1em; font-size: 13px;">Urus Maklumat</a>
+                    <!-- <a href="<?=base_url('/urusmaklumat')?>" class="w3-white"><i class="fa fa-angle-right aria-hidden="
+                            true"></i><span style="margin-left: 1em; font-size: 13px;">Urus Maklumat</a> -->
                     <?php } ?>
                     <a href="<?=base_url('/laporan')?>" class="w3-white"><i class="fa fa-angle-right aria-hidden="
                             true"></i><span style="margin-left: 1em; font-size: 13px;">Laporan</a>

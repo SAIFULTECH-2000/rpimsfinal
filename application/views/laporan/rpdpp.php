@@ -45,7 +45,7 @@
                             <div class="row no-gutters align-items-center">
                                 <table>
                                     <tr>
-                                        <td>Diploma</td>
+                                        <td>Pra Diploma</td>
                                         <td>:</td>
                                         <td><?= $pratd['total'] ?></td>
                                     </tr>
@@ -133,7 +133,7 @@
                     </th>
                 </tr>
                 <?php
-                echo "<br><p><b><font size = '5'>  &nbsp Laporan RP dibawah BIDANG</font></b></p>";
+                echo "<br><p><b><font size = '5'>  &nbsp Laporan RP dibawah bidang</font></b></p>";
                 $no = 1;
                 foreach ($result as $row) {
                     echo "

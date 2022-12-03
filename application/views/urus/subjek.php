@@ -1,20 +1,22 @@
 <div id="back-borang">
-    <a href="<?=base_url('urusmaklumat')?>"><button class="button" style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
+    <a href="<?=base_url('carian')?>"><button class="button"
+            style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
 </div>
 <section class="form-section">
     <form method="post" class="borang">
-      
-        <h4><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;Daftar Subjek</h4></h4>
+
+        <h4><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;Daftar Subjek</h4>
+        </h4>
         <hr>
         <?php
             if (isset($msg)) {
                 echo $msg;
             }
         ?>
-        <br/>
+        <br />
 
         <b>Program :</b>
-        <br/>
+        <br />
         <?php
 
 
@@ -33,8 +35,8 @@
             }
             echo "</select>";
         ?>
-        <br/><br/>
-        
+        <br /><br />
+
         <b>Kursus :</b>
         <br>
         <?php
@@ -51,26 +53,26 @@
             }
             echo "</select>";
         ?>
-        <br/><br/>
-        
+        <br /><br />
+
         <b>Pelan Bahagian :</b>
-        <br/>
+        <br />
         <!--<input type="text" class="form-control" placeholder="Bahagian Pelan" name="BhgPelan" required  />-->
         <select name="BhgPelan" value="BhgPelan" required>
-          <option value="" disabled selected hidden>--</option>
-          <option value="PART 1">PART 1</option>
-          <option value="PART 2">PART 2</option>
-          <option value="PART 3">PART 3</option>
-          <option value="PART 4">PART 4</option>
-          <option value="PART 5">PART 5</option>
-          <option value="PART 6">PART 6</option>
-          <option value="PART 7">PART 7</option>
-          <option value="PART 8">PART 8</option>
-          <option value="PART 9">PART 9</option>
-          <option value="PART 10">PART 10</option>
+            <option value="" disabled selected hidden>--</option>
+            <option value="PART 1">PART 1</option>
+            <option value="PART 2">PART 2</option>
+            <option value="PART 3">PART 3</option>
+            <option value="PART 4">PART 4</option>
+            <option value="PART 5">PART 5</option>
+            <option value="PART 6">PART 6</option>
+            <option value="PART 7">PART 7</option>
+            <option value="PART 8">PART 8</option>
+            <option value="PART 9">PART 9</option>
+            <option value="PART 10">PART 10</option>
         </select>
-        <br/><br/>
-        
+        <br /><br />
+
         <button type="submit" class="button-ungu button4" name="btn-signup">&nbsp; Daftar Subjek</button>
     </form>
 

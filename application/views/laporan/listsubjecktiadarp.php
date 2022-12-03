@@ -34,7 +34,7 @@
                                 <center>Nama Kursus</center>
                             </th>
                             <th class="col-xs-2">
-                                <center>Kod Jabatan</center>
+                                <center>Kod Bidang</center>
                             </th>
                             <th class="col-xs-4">
                                 <center>Tahap</center>

@@ -13,14 +13,16 @@
     <center>
         <form method='POST' class="cari">
             <div class="row col-lg-11">
-                <h1>Sila Pilih BIDANG</h1>
+                <h1>Sila Pilih Bidang</h1>
                 <div class="col col-lg-2">
                 </div>
                 <div class="input-group col col-lg-6" style="padding:0;">
                     <select width="100%" id="kursus" name="kursus" class="form-control"
                         style="border:0; background-color:#e9ecef;">
                         <?php foreach ($results as $jab) { ?>
-                        <option value="<?= $jab['KodJab'] ?>"><?= $jab['NamaJabBhg'] ?></option>
+                        <option value="<?= $jab['KodJab'] ?>"
+                            <?php if($namajabatan['KodJab']==$jab['KodJab'])echo "selected";?>><?= $jab['NamaJabBhg'] ?>
+                        </option>
                         <?php } ?>
 
                     </select>
@@ -65,7 +67,7 @@
 
 	?>
     <b>
-        <font size='5'><i class='fa fa-book' aria-hidden='true'></i>&nbsp;SENARAI KURSUS</font>
+        <font size='5'><i class='fa fa-book' aria-hidden='true'></i>&nbsp;SENARAI LAPORAN RP</font>
     </b>
     <br />
     <br />
@@ -108,7 +110,7 @@
                     <tbody>
                         <?php
 							if ($result != "") {
-								echo "<br><p><b><font size = '5'>  &nbsp Laporan RP dibawah BIDANG</font></b></p>";
+								echo "<br><p><b><font size = '5'>  &nbsp Laporan RP dibawah bidang ".$namajabatan['NamaJabBhg']."</font></b></p>";
 								$no = 1;
 								foreach ($result as $row) {
 									echo "

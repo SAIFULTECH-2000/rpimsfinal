@@ -94,11 +94,19 @@ body {
 						if ($row['GredJawatan'] == "DM45") {
 							echo "Pensyarah(DM45)";
 						} ?><br>
-                        BIDANG Sains Komputer<br>
+                        <?php 
+                        $KodJab = $row['KodJab'];
+                       $pengajian= $this->db->query("SELECT * FROM pengajian inner join bidangdalampengajian on pengajian.id = bidangdalampengajian.pengajianid where bidangid = '$KodJab'")->row_array();    
+                        if(isset($pengajian)){
+                       ?>
+
+                        <?=$pengajian['title'] ?>
+                        <?php }?>
+                        <br>
                         KOLEJ PENGKOMPUTERAN, INFORMATIK DAN MEDIA<br>
                         Universiti Teknologi MARA<br><br>
 
-                        <?php $gelran ?><br>
+                        <?php $gelaran ?><br>
                         <b>
                             PELANTIKAN SEBAGAI RESOURCE PERSON (RP)<br>
                             &nbsp;KOD KURSUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?= $row['KodKursus'] ?><br>

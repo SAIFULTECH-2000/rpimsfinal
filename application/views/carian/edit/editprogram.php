@@ -1,33 +1,34 @@
 <div id="back-borang">
-    <a href="<?=base_url('carian/program')?>"><button class="button" style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
+    <a href="<?=base_url('carian/program')?>"><button class="button"
+            style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
 </div>
 <section class="form-section">
 
     <form method="post" class="borang">
-      
-        <h4><b><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Daftar Program</b></h4>
+
+        <h4><b><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Kemaskini Program</b></h4>
         <hr>
         <?php
             if (isset($msg)) {
                 echo $msg;
             }
         ?>
-        <br/>
+        <br />
 
         <b>Kod Program :</b>
-        <br/>
-        <input type="text" placeholder="" name="KodProgram" value="<?=$row['KodProgram']?>"readonly />
-        <br/><br/>
-        
+        <br />
+        <input type="text" placeholder="" name="KodProgram" value="<?=$row['KodProgram']?>" readonly />
+        <br /><br />
+
 
         <b>Nama Program :</b>
-        <br/>
-        <input type="text" placeholder="" name="NamaProgram"  value="<?=$row['NamaProgram']?>"  required  />
-        <br/><br/>
-        
+        <br />
+        <input type="text" placeholder="" name="NamaProgram" value="<?=$row['NamaProgram']?>" required />
+        <br /><br />
+
 
         <b>BIDANG :</b>
-        <br/>
+        <br />
         <?php
            
 
@@ -38,12 +39,13 @@
            foreach($result as $rows):
            
        ?>
-       <option value="<?=$rows['KodJab']?>" <?php if($row['KodJab'] ==$rows['KodJab']){echo "selected";}?> ><?=$rows['NamaJabBhg']?>&nbsp;(<?=$rows['KodJab']?>)</option>
-       <?php
+        <option value="<?=$rows['KodJab']?>" <?php if($row['KodJab'] ==$rows['KodJab']){echo "selected";}?>>
+            <?=$rows['NamaJabBhg']?>&nbsp;(<?=$rows['KodJab']?>)</option>
+        <?php
        endforeach;
        ?>
-       </select>
-        <br/><br/>
+        </select>
+        <br /><br />
         <button type="submit" class="button-ungu button4" name="btn-signup">&nbsp; Daftar Program</button>
     </form>
 </section>

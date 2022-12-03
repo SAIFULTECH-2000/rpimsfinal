@@ -136,8 +136,12 @@ class Laporan extends CI_Controller
 			$this->load->view('components/footer');
 		} else {
 			$data['search'] = "ada";
+
 			$KodJab =  $this->input->post("kursus");
+		
 			$data['result'] = $this->db->query("SELECT * FROM `perlantikan` inner join staf on perlantikan.NoPekerja = staf.NoPekerja inner join kursus on perlantikan.KodKursus = kursus.KodKursus inner join kampus on staf.KodKampus = kampus.KodKampus inner join jabatan on staf.KodJab = jabatan.KodJab WHERE disahkan='Sah' and  perlantikan.KodKursus in (SELECT KodKursus FROM `kursus`) and jabatan.KodJab  = '$KodJab'")->result_array();
+			$data['namajabatan'] = $this->db->query("SELECT * FROM jabatan where KodJab = '$KodJab'")->row_array();
+			
 			$this->load->view('components/header');
 			$this->load->view('laporan/rpdppa', $data);
 			$this->load->view('components/footer');

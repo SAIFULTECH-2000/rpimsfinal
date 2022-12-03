@@ -1,20 +1,21 @@
 <div id="back-borang">
-    <a href="<?=base_url('urusmaklumat')?>"><button class="button" style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
+    <a href="<?=base_url('carian')?>"><button class="button"
+            style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
 </div>
 <section class="form-section">
 
     <form method="post" class="borang">
-    <h4><b><i class="fa fa-map-signs" aria-hidden="true"></i>&nbsp;&nbsp;Daftar Cawangan</b></h4>
-    <hr>
-    <?php
+        <h4><b><i class="fa fa-map-signs" aria-hidden="true"></i>&nbsp;&nbsp;Daftar Cawangan</b></h4>
+        <hr>
+        <?php
         if (isset($msg)) {
             echo $msg;
         }
     ?>
-    <br/>
-    <b>BIDANG :</b>
-    <br/>
-    <?php
+        <br />
+        <b>Bidang :</b>
+        <br />
+        <?php
 
         $result = $this->db->query("SELECT KodJab, NamaJabBhg from jabatan WHERE status='active' ORDER BY NamaJabBhg ASC")->result_array();
           
@@ -30,13 +31,13 @@
 
         echo "</select>";
     ?>
-    <br/><br/>
-    
+        <br /><br />
 
 
-    <b>Kampus :</b>
-    <br/>
-    <?php
+
+        <b>Kampus :</b>
+        <br />
+        <?php
 
    
 
@@ -57,7 +58,7 @@
 
         echo "</select>";
     ?>
-    <br/><br/>
-    <button type="submit" class="button-ungu button4" name="btn-signup">Daftar Cawangan</button> 
+        <br /><br />
+        <button type="submit" class="button-ungu button4" name="btn-signup">Daftar Cawangan</button>
     </form>
 </section>

@@ -534,4 +534,21 @@ Thank you<br>
             }
         }
     }
+    public function daftar_pengajian(){
+         $this->form_validation->set_rules('title', 'title', 'required|trim');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('components/header');
+            $this->load->view('urus/pengajian');
+            $this->load->view('components/footer');
+        }else{
+            $data = [
+                'title' =>  $this->input->post('title'),
+            ];
+            $this->db->insert('pengajian',$data);
+             $data['msg'] = "Terima kasih, pengajian baru berjaya ditambah.<br>";
+            $this->load->view('components/header');
+            $this->load->view('urus/pengajian', $data);
+            $this->load->view('components/footer');
+        } 
+    }
 }

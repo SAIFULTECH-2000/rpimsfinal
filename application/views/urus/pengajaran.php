@@ -1,11 +1,12 @@
 <div id="back-borang">
-    <a href="<?=base_url('urusmaklumat')?>"><button class="button" style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
+    <a href="<?=base_url('carian')?>"><button class="button"
+            style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
 </div>
 
-    <section class="form-section">
+<section class="form-section">
 
-        <form method="post" class="borang">
-      
+    <form method="post" class="borang">
+
         <h4><b><i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;Daftar Pengajaran Pensyarah</b></h4>
         <hr>
         <?php
@@ -13,9 +14,9 @@
                 echo $msg;
             }
         ?>
-        <br/>
+        <br />
         <b>Pensyarah :</b>
-        <br/>
+        <br />
         <?php
 
             $result = $this->db->query("SELECT NoPekerja, NamaStaf from staf WHERE status='active' ORDER BY NamaStaf ASC")->result_array();
@@ -34,12 +35,12 @@
             }
             echo "</select>";
         ?>
-        <br/><br/>
-        
+        <br /><br />
+
 
 
         <b>Kursus :</b>
-        <br/>
+        <br />
         <?php
 
         $result = $this->db->query("SELECT KodKursus, NamaKursus from kursus WHERE status='active' ORDER BY KodKursus ASC")->result_array();
@@ -59,10 +60,10 @@
 
             echo "</select>";
         ?>
-        <br/><br/>
-        
+        <br /><br />
+
         <b>Semester :</b>
-        <br/>
+        <br />
         <?php
 
         $result= $this->db->query("SELECT KodSem, NamaSem from semester WHERE status='active' ORDER BY KodSem ASC")->result_array();
@@ -82,12 +83,12 @@
 
             echo "</select>";
         ?>
-        <br/><br/>
+        <br /><br />
 
-        
-        <button type="submit" class="button-ungu button4" name="btn-signup">Daftar Pengajaran</button> 
-            
-        </div> 
-      
-      </form>
+
+        <button type="submit" class="button-ungu button4" name="btn-signup">Daftar Pengajaran</button>
+
+        </div>
+
+    </form>
 </section>

@@ -1,9 +1,10 @@
 <div id="back-senarai-no-carian">
-    <a href="<?=base_url('laporan')?>"><button class="button" style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
+    <a href="<?=base_url('laporan')?>"><button class="button"
+            style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
 </div>
 <section>
-<br/>
-<?php 
+    <br />
+    <?php 
 $NoPekerja = $this->session->userdata('username');
 $result = $this->db->query("SELECT KodJab FROM staf where NoPekerja like '$NoPekerja'")->row_array();
 $KodJab = $result['KodJab'];
@@ -23,13 +24,16 @@ $td = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  whe
 $tsm = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  where kursus.type=1 and KodJab like '$KodJab' ")->row_array();
 $ts = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  where kursus.type=2 and KodJab like '$KodJab' ")->row_array();
 ?>
-<br><p><b><font size = '5'> <i class='fa fa-archive' aria-hidden='true'></i> &nbsp LAPORAN SISTEM TERBARU</font></b></p>
-	<div id="table-wrapper">
-  		<div id="table-scroll">	
-			<table align="center" class="data-table">
+    <br>
+    <p><b>
+            <font size='5'> <i class='fa fa-archive' aria-hidden='true'></i> &nbsp LAPORAN SISTEM TERBARU</font>
+        </b></p>
+    <div id="table-wrapper">
+        <div id="table-scroll">
+            <table align="center" class="data-table">
                 <tr>
                     <th>Pensyarah</th>
-                    <th>BIDANG</th>
+                    <th>Bidang</th>
                     <th>Kampus</th>
                     <th>Kursus</th>
                     <th>Cawangan</th>
@@ -41,7 +45,8 @@ $ts = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  whe
                     <td><?=$jabatan?></td>
                     <td><?=$kampus?></td>
                     <td><?=$kursus?></td>
-                    <td><?=$cawangan?></td></td>
+                    <td><?=$cawangan?></td>
+                    </td>
                     <td><?=$program?></td>
                     <td><?=$subjek?></td>
                 </tr>
@@ -49,10 +54,10 @@ $ts = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  whe
         </div>
     </div>
 
-    
-<br>
-<div class="row">
-    <div class="col-xl-3 col-md-6 mb-4">
+
+    <br>
+    <div class="row">
+        <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -100,6 +105,6 @@ $ts = $this->db->query("SELECT COUNT(kursus.KodKursus) as total FROM kursus  whe
                 </div>
             </div>
         </div>
-</div>
-	
+    </div>
+
 </section>

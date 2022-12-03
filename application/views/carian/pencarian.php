@@ -87,13 +87,25 @@
                             <font size="5"> <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i> </font>
                             <br><br>SEMESTER</font>
                         </b></div>
+                </a></td>
+            <td><a href="<?=base_url('carian/pengajian')?>">
+                    <div class="container"><br><br> <b>
+                            <font size="5"> <i class="fa fa-building-o fa-2xz" aria-hidden="true"></i> </font>
+                            <br><br>PENGAJIAN</font>
+                        </b></div>
+                </a></td>
+            <td><a href="<?=base_url('carian/grouppengajian')?>">
+                    <div class="container"><br><br> <b>
+                            <font size="5"> <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i> </font>
+                            <br><br>GROUP PENGAJIAN</font>
+                        </b></div>
+                </a></td>
+            <?php if( $this->session->userdata('role_id')==4){?>
+            <td><a href="<?=base_url('carian/perlantikan_yang_perlu_dicetak')?>">
+                    <div class="container"><br><i class="fa fa-id-badge fa-2x" aria-hidden="true"></i><br><br>SENARAI
+                        PERLANTIKAN<br> YANG TELAH DISAHKAN</b></div>
             </td><a>
-                <?php if( $this->session->userdata('role_id')==4){?>
-                <td><a href="<?=base_url('carian/perlantikan_yang_perlu_dicetak')?>">
-                        <div class="container"><br><i class="fa fa-id-badge fa-2x"
-                                aria-hidden="true"></i><br><br>SENARAI PERLANTIKAN<br> YANG TELAH DISAHKAN</b></div>
-                </td><a>
-                    <?php }?>
+                <?php }?>
         </tr>
 
     </table>

@@ -1,5 +1,5 @@
 <div id="back-borang">
-    <a href="<?=base_url('urusmaklumat')?>"><button class="button"
+    <a href="<?=base_url('carian')?>"><button class="button"
             style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a><br><br><br>
 </div>
 <section class="form-section">
@@ -22,7 +22,7 @@
         <input type="text" style="width:400px;" placeholder="" name="NamaKursus" required />
         <br><br>
 
-        <b>BIDANG :</b>
+        <b>Bidang :</b>
         <br>
         <?php
            

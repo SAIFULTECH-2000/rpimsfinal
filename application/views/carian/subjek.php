@@ -1,10 +1,13 @@
 <link href="<?=base_url('assets/sbadmin/')?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-<div id="back-senarai">
-    <a href="<?=base_url('carian')?>"><button class="button"
-            style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
-</div>
+
 <section>
+    <div class="row">
+        <a href="<?=base_url('carian')?>"><button class="button"
+                style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
+        <a href="<?=base_url('/urusmaklumat/daftar_subjek')?>"><button class="button"
+                style="vertical-align:middle"><span><b>DAFTAR SUBJEK</b></span></button></a>
+    </div>
     <center>
         <form method='POST' class="cari">
             <input type='text' placeholder='SILA ISIKAN PROGRAM, KURSUS ATAU BAHAGIAN' value="<?=set_value('search')?>"

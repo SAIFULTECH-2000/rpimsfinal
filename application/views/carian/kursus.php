@@ -1,11 +1,14 @@
 <link href="<?= base_url('assets/sbadmin/') ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-<div id="back-senarai">
-    <a href="<?= base_url('carian') ?>"><button class="button"
-            style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
-</div>
+
 
 <section>
+    <div class="row">
+        <a href="<?=base_url('carian')?>"><button class="button"
+                style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
+        <a href="<?=base_url('/urusmaklumat/daftar_kursus')?>"><button class="button"
+                style="vertical-align:middle"><span><b>DAFTAR KURSUS</b></span></button></a>
+    </div>
     <?php
     $searchxx = "";
     ?>
@@ -74,7 +77,7 @@
                                 <center>Nama Kursus</center>
                             </th>
                             <th class="col-xs-2">
-                                <center>Kod Jabatan</center>
+                                <center>Kod Bidang</center>
                             </th>
                             <th class="col-xs-4">
                                 <center>Tahap</center>

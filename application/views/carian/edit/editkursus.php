@@ -23,7 +23,7 @@
             required />
         <br><br>
 
-        <b>BIDANG :</b>
+        <b>Bidang :</b>
         <br>
         <?php
 

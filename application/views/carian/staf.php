@@ -1,10 +1,15 @@
 <link href="<?=base_url('assets/sbadmin/')?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-<div id="back-senarai">
-    <a href="<?=base_url('carian')?>"><button class="button"
-            style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
-</div>
+
 <section>
+
+
+    <div class="row">
+        <a href="<?=base_url('carian')?>"><button class="button"
+                style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
+        <a href="<?=base_url('/urusmaklumat/daftar_staf')?>"><button class="button"
+                style="vertical-align:middle"><span><b>DAFTAR STAF</b></span></button></a>
+    </div>
     <center>
         <form method='POST' class="cari">
             <div class="row col-lg-11">

@@ -840,4 +840,67 @@ Thank you";
 			redirect('carian/perlantikan_yang_perlu_dicetak');
 		}
 	}
+	public function pengajian()
+	{
+		
+		$data['result'] = $this->db->query("select * from pengajian")->result_array();
+			
+			$this->load->view('components/header');
+			$this->load->view('carian/pengajian', $data);
+			$this->load->view('components/footer');
+	}
+	public function kemaskini_pengajian()
+	{
+		
+	
+		$this->form_validation->set_rules('title', 'title', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		$id=$this->input->post('pengajianid');
+		$data['id']= $id;
+		$data['result']= $this->db->query("select * from pengajian where id='$id'")->row_array();
+		$this->load->view('components/header');
+		$this->load->view('carian/edit/editpengajian', $data);
+		$this->load->view('components/footer');
+		}else{
+			$data = array(
+					'title' => $this->input->post('title'),
+			);
+			$this->db->set($data);
+			$this->db->where('id', $this->input->post('id'));
+			$this->db->update('pengajian');
+			redirect('carian/pengajian');
+		}
+	}
+	public function grouppengajian()
+	{
+		
+		$data['result'] = $this->db->query("select * from pengajian")->result_array();
+		
+		$this->load->view('components/header');
+		$this->load->view('carian/grouppengajian', $data);
+		$this->load->view('components/footer');		
+	}
+	public function kemaskini_grouppengajian()
+	{
+		$this->form_validation->set_rules('pengajianid', 'pengajianid', 'required|trim');
+		$this->form_validation->set_rules('KodJab', 'KodJab', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		$data['result'] = $this->db->query("select * from pengajian")->result_array();
+		$data['result2']= $this->db->query("select * from jabatan")->result_array();
+		$this->load->view('components/header');
+		$this->load->view('carian/edit/grouppengajian', $data);
+		$this->load->view('components/footer');	
+		}else{
+			$data = [
+				'pengajianid'=>$this->input->post('pengajianid'),
+				'bidangid'=>$this->input->post('KodJab'),
+			];
+			$this->db->insert('bidangdalampengajian',$data);
+            $data['msg'] = "Terima kasih, pengajian baru berjaya ditambah.<br>";
+            $this->load->view('components/header');
+            $this->load->view('carian/edit/grouppengajian', $data);
+            $this->load->view('components/footer');
+		}
+	}
+
 }

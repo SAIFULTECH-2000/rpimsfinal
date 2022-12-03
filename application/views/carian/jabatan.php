@@ -1,11 +1,12 @@
 <link href="<?=base_url('assets/sbadmin/')?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-<div id="back-senarai">
-    <a href="<?=base_url('carian')?>"><button class="button"
-            style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
-</div>
-
-<section>
+< <section>
+    <div class="row">
+        <a href="<?=base_url('carian')?>"><button class="button"
+                style="vertical-align:middle"><span><b>KEMBALI</b></span></button></a>
+        <a href="<?=base_url('/urusmaklumat/daftar_jabatan')?>"><button class="button"
+                style="vertical-align:middle"><span><b>DAFTAR BIDANG</b></span></button></a>
+    </div>
     <center>
         <form method='POST' class="cari">
             <input type='text' placeholder='SILA ISIKAN JAB. UNTUK DICARI' value="<?=set_value('search')?>"
@@ -100,10 +101,10 @@
 
 
 
-</section>
-<script src="<?=base_url('assets/sbadmin/')?>vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="<?=base_url('assets/sbadmin/')?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    </section>
+    <script src="<?=base_url('assets/sbadmin/')?>vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?=base_url('assets/sbadmin/')?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="<?=base_url('assets/sbadmin/')?>js/demo/datatables-demo.js"></script>
-<!-- // END CONTENT SECTION -->
+    <!-- Page level custom scripts -->
+    <script src="<?=base_url('assets/sbadmin/')?>js/demo/datatables-demo.js"></script>
+    <!-- // END CONTENT SECTION -->

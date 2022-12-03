@@ -13,7 +13,7 @@ class Surat extends CI_Controller
     {
         $search = $this->uri->segment(3);
 
-        $data['row'] = $this->db->query("(SELECT perlantikan.gelaran, perlantikan.tarikhsurat,staf.GredJawatan,staf.Jantina, perlantikan.id, perlantikan.NoPekerja, perlantikan.KodKursus,kursus.NamaKursus, staf.NamaStaf, perlantikan.TarikhMula, 
+        $data['row'] = $this->db->query("(SELECT perlantikan.gelaran, perlantikan.tarikhsurat,staf.GredJawatan,staf.Jantina, perlantikan.id, perlantikan.NoPekerja, perlantikan.KodKursus,kursus.NamaKursus, staf.NamaStaf,kursus.KodJab, perlantikan.TarikhMula, 
         perlantikan.TarikhTamat, perlantikan.Suratperlantikan, perlantikan.status
         FROM perlantikan 
             INNER JOIN kursus ON perlantikan.KodKursus=kursus.KodKursus 
@@ -21,7 +21,7 @@ class Surat extends CI_Controller
         WHERE perlantikan.id= '$search'
         ORDER BY perlantikan.TarikhMula)
         UNION
-        (SELECT perlantikantamat.gelaran ,perlantikantamat.tarikhsurat,staf.GredJawatan,staf.Jantina, perlantikantamat.id, perlantikantamat.NoPekerja, perlantikantamat.KodKursus, kursus.NamaKursus, staf.NamaStaf, perlantikantamat.TarikhMula, perlantikantamat.TarikhTamat, perlantikantamat.SuratPerlantikan, perlantikantamat.status
+        (SELECT perlantikantamat.gelaran ,perlantikantamat.tarikhsurat,staf.GredJawatan,kursus.KodJab,staf.Jantina, perlantikantamat.id, perlantikantamat.NoPekerja, perlantikantamat.KodKursus, kursus.NamaKursus, staf.NamaStaf, perlantikantamat.TarikhMula, perlantikantamat.TarikhTamat, perlantikantamat.SuratPerlantikan, perlantikantamat.status
         FROM perlantikantamat 
             INNER JOIN kursus ON perlantikantamat.KodKursus=kursus.KodKursus 
             INNER JOIN staf ON perlantikantamat.NoPekerja=staf.NoPekerja
